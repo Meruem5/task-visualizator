@@ -20,15 +20,13 @@ function App() {
     if (loading) {
       setTimeout(() => {
         setLoading(false);
-      }, 5000);
+      }, 500);
     }
   }, [loading]);
 
   return (
     <div className="App">
-      <header className="App-header">
-        {loading ? <p>Loading....</p> : <p>{data}</p>}
-      </header>
+      {loading ? <p>Loading....</p> : <pre>{JSON.stringify(data, null, 2)}</pre>}
     </div>
   );
 }
