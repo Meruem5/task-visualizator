@@ -33,28 +33,28 @@ function App() {
     return title.charAt(0).toUpperCase() + title.slice(1);
   };
 
-  const renderList = (title, dataArray) => {
+  const renderList = (title, dataArray, listUniqueKey) => {
     return (
-      <>
+      <div {...(listUniqueKey && { key: listUniqueKey })}>
         <h1>{capitalizeTitle(title)}</h1>
-        {dataArray.map((data, index) => (
+        {dataArray?.map((data, index) => (
           <div
             key={index}
             className="ListItemWrapper"
             style={{ backgroundColor: listBGColor[title] }}
           >
-            {fieldsOfInterest[title].map((key) => {
+            {fieldsOfInterest[title].map((key, index) => {
               const isArray = data[key] instanceof Array;
 
               return isArray ? (
-                renderList(key, data[key])
+                renderList(key, data[key], index)
               ) : (
-                <h2>{data[key]}</h2>
+                <h2 key={index}>{data[key]}</h2>
               );
             })}
           </div>
         ))}
-      </>
+      </div>
     );
   };
 
