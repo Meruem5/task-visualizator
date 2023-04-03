@@ -7,6 +7,17 @@ function App() {
   const [dataobj, setDataobj] = useState({});
   const [loading, setLoading] = useState(false);
 
+  const fieldsOfInterest = {
+    projects: ["name", "key", "issues"],
+    issues: ["status"],
+    users: ["name"],
+  };
+  const listBGColor = {
+    projects: "lightblue",
+    issues: "gray",
+    users: "red",
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -18,34 +29,46 @@ function App() {
     fetchData();
   }, []);
 
+  const capitalizeTitle = (title) => {
+    return title.charAt(0).toUpperCase() + title.slice(1);
+  };
+
+  const renderList = (title, dataArray, listUniqueKey) => {
+    return (
+      <div {...(listUniqueKey && { key: listUniqueKey })}>
+        <h1>{capitalizeTitle(title)}</h1>
+        {dataArray?.map((data, index) => (
+          <div
+            key={index}
+            className="ListItemWrapper"
+            style={{ backgroundColor: listBGColor[title] }}
+          >
+            {fieldsOfInterest[title].map((key, index) => {
+              const isArray = data[key] instanceof Array;
+
+              return isArray ? (
+                renderList(key, data[key], index)
+              ) : (
+                <h2 key={index}>{data[key]}</h2>
+              );
+            })}
+          </div>
+        ))}
+      </div>
+    );
+  };
+
   return (
-    <div className="App">
+    <>
       {loading ? (
         <p>Loading....</p>
       ) : (
-        <div>
-          <h1>Projects</h1>
-          {dataobj.projects?.map((project, index) => (
-            <div key={index} className="data-container" style={{ backgroundColor: "lightblue" }}>
-              <h2>{project.name}</h2>
-              <h2>{project.key}</h2>
-              <h1>Issues</h1>
-              {project.issues.map((issue, index) => (
-                <div key={index} className="data-container" style={{ backgroundColor: "gray" }}>
-                  <h2>{issue.status}</h2>
-                </div>
-              ))}
-            </div>
-          ))}
-          <h1>Users</h1>
-          {dataobj.users?.map((user, index) => (
-            <div key={index} className="data-container" style={{ backgroundColor: "red" }}>
-              <h2>{user.name}</h2>
-            </div>
-          ))}
-        </div>
+        <>
+          {renderList("projects", dataobj.projects)}
+          {renderList("users", dataobj.users)}
+        </>
       )}
-    </div>
+    </>
   );
 }
 
