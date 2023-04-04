@@ -1,133 +1,218 @@
 {
-    "users": [
+  "users": [
+    {
+      "name": "abcde-12345-fedcba"
+    },
+    {
+      "name": "edcba-12345-abcdef"
+    }
+  ],
+  "links": [
+    {
+      "name": "sub-task-link",
+      "sourceId": "2",
+      "destinationId": "1"
+    },
+    {
+      "name": "Duplicate",
+      "sourceId": "3",
+      "destinationId": "2"
+    }
+  ],
+  "projects": [
+    {
+      "name": "A Sample Project",
+      "key": "ASM",
+      "description": "JSON file description",
+      "versions": [
         {
-            "name": "abcde-12345-fedcba"
+          "name": "1.0",
+          "released": true,
+          "releaseDate": "2012-08-31T15:59:02.161+0100"
         },
         {
-            "name": "edcba-12345-abcdef"
+          "name": "2.0"
         }
-    ],
-    "links": [
+      ],
+      "components": ["Component", "AnotherComponent"],
+      "issues": [
         {
-            "name": "sub-task-link",
-            "sourceId": "2",
-            "destinationId": "1"
+          "priority": "Major",
+          "description": "Some nice description here\nMaybe _italics_ or *bold*?",
+          "status": "Closed",
+          "reporter": "abcde-12345-fedcba",
+          "labels": ["impossible", "to", "test"],
+          "watchers": ["abcde-12345-fedcba"],
+          "issueType": "Bug",
+          "resolution": "Resolved",
+          "created": "2012-08-31T17:59:02.161+0100",
+          "updated": "2012-08-31T17:59:02.161+0100",
+          "affectedVersions": ["1.0"],
+          "summary": "My chore for today",
+          "assignee": "abcde-12345-fedcba",
+          "fixedVersions": ["1.0", "2.0"],
+          "components": ["Component", "AnotherComponent"],
+          "externalId": "1",
+          "history": [
+            {
+              "author": "abcde-12345-fedcba",
+              "created": "2012-08-31T15:59:02.161+0100",
+              "items": [
+                {
+                  "fieldType": "jira",
+                  "field": "status",
+                  "from": "1",
+                  "fromString": "Open",
+                  "to": "5",
+                  "toString": "Resolved"
+                }
+              ]
+            }
+          ],
+          "customFieldValues": [
+            {
+              "fieldName": "Story Points",
+              "fieldType": "com.atlassian.jira.plugin.system.customfieldtypes:float",
+              "value": "15"
+            },
+            {
+              "fieldName": "Business Value",
+              "fieldType": "com.atlassian.jira.plugin.system.customfieldtypes:float",
+              "value": "34"
+            }
+          ],
+          "attachments": [
+            {
+              "name": "battarang.jpg",
+              "attacher": "bob@example.com",
+              "created": "2012-08-31T17:59:02.161+0100",
+              "uri": "http://optimus-prime/~batman/images/battarang.jpg",
+              "description": "This is optimus prime"
+            }
+          ]
         },
         {
-            "name": "Duplicate",
-            "sourceId": "3",
-            "destinationId": "2"
-        }
-    ],
-    "projects": [
+          "status": "Open",
+          "reporter": "abcde-12345-fedcba",
+          "issueType": "Sub-task",
+          "created": "P-3D",
+          "updated": "P-1D",
+          "summary": "Sub-task",
+          "externalId": "2"
+        },
         {
-            "name": "A Sample Project",
-            "key": "ASM",
-            "description": "JSON file description",
-            "versions": [
-                {
-                    "name": "1.0",
-                    "released": true,
-                    "releaseDate": "2012-08-31T15:59:02.161+0100"
-                },
-                {
-                    "name": "2.0"
-                }
-            ],
-            "components": [
-                "Component",
-                "AnotherComponent"
-            ],
-            "issues": [
-                {
-                    "priority": "Major",
-                    "description": "Some nice description here\nMaybe _italics_ or *bold*?",
-                    "status": "Closed",
-                    "reporter": "abcde-12345-fedcba",
-                    "labels": [
-                        "impossible",
-                        "to",
-                        "test"
-                    ],
-                    "watchers": [
-                        "abcde-12345-fedcba"
-                    ],
-                    "issueType": "Bug",
-                    "resolution": "Resolved",
-                    "created": "2012-08-31T17:59:02.161+0100",
-                    "updated": "2012-08-31T17:59:02.161+0100",
-                    "affectedVersions": [
-                        "1.0"
-                    ],
-                    "summary": "My chore for today",
-                    "assignee": "abcde-12345-fedcba",
-                    "fixedVersions": [
-                        "1.0",
-                        "2.0"
-                    ],
-                    "components": [
-                        "Component",
-                        "AnotherComponent"
-                    ],
-                    "externalId": "1",
-                    "history": [
-                        {
-                            "author": "abcde-12345-fedcba",
-                            "created": "2012-08-31T15:59:02.161+0100",
-                            "items": [
-                                {
-                                    "fieldType": "jira",
-                                    "field": "status",
-                                    "from": "1",
-                                    "fromString": "Open",
-                                    "to": "5",
-                                    "toString": "Resolved"
-                                }
-                            ]
-                        }
-                    ],
-                    "customFieldValues": [
-                        {
-                            "fieldName": "Story Points",
-                            "fieldType": "com.atlassian.jira.plugin.system.customfieldtypes:float",
-                            "value": "15"
-                        },
-                        {
-                            "fieldName": "Business Value",
-                            "fieldType": "com.atlassian.jira.plugin.system.customfieldtypes:float",
-                            "value": "34"
-                        }
-                    ],
-                    "attachments": [
-                        {
-                            "name": "battarang.jpg",
-                            "attacher": "bob@example.com",
-                            "created": "2012-08-31T17:59:02.161+0100",
-                            "uri": "http://optimus-prime/~batman/images/battarang.jpg",
-                            "description": "This is optimus prime"
-                        }
-                    ]
-                },
-                {
-                    "status": "Open",
-                    "reporter": "abcde-12345-fedcba",
-                    "issueType": "Sub-task",
-                    "created": "P-3D",
-                    "updated": "P-1D",
-                    "summary": "Sub-task",
-                    "externalId": "2"
-                },
-                {
-                    "status": "Closed",
-                    "reporter": "abcde-12345-fedcba",
-                    "issueType": "Sub-task",
-                    "created": "P-3D",
-                    "updated": "P-1D",
-                    "resolution": "Duplicate",
-                    "summary": "Duplicate Sub-task",
-                    "externalId": "3"
-                }
-            ]
+          "status": "Closed",
+          "reporter": "abcde-12345-fedcba",
+          "issueType": "Sub-task",
+          "created": "P-3D",
+          "updated": "P-1D",
+          "resolution": "Duplicate",
+          "summary": "Duplicate Sub-task",
+          "externalId": "3"
         }
-    ]
+      ]
+    },
+    {
+      "name": "Project A",
+      "key": "PROJA",
+      "description": "A Sample Project",
+      "versions": [
+        {
+          "name": "1.0",
+          "released": true,
+          "releaseDate": "2022-01-01T10:00:00.000+0000"
+        },
+        {
+          "name": "2.0",
+          "released": false
+        }
+      ],
+      "components": ["Component A", "Component B"],
+      "issues": [
+        {
+          "priority": "High",
+          "description": "Some issue description",
+          "status": "Open",
+          "reporter": "user123",
+          "labels": ["bug", "urgent"],
+          "watchers": ["user456"],
+          "issueType": "Bug",
+          "created": "2022-03-31T12:34:56.789+0000",
+          "updated": "2022-04-01T10:11:12.131+0000",
+          "affectedVersions": ["1.0"],
+          "summary": "Fix broken feature",
+          "assignee": "user789",
+          "fixedVersions": ["2.0"],
+          "components": ["Component A"],
+          "externalId": "1",
+          "history": [
+            {
+              "author": "user123",
+              "created": "2022-03-31T12:34:56.789+0000",
+              "items": [
+                {
+                  "fieldType": "jira",
+                  "field": "status",
+                  "from": "1",
+                  "fromString": "Open",
+                  "to": "5",
+                  "toString": "Resolved"
+                }
+              ]
+            }
+          ],
+          "customFieldValues": [
+            {
+              "fieldName": "Story Points",
+              "fieldType": "com.atlassian.jira.plugin.system.customfieldtypes:float",
+              "value": "8"
+            }
+          ],
+          "attachments": [
+            {
+              "name": "screenshot.jpg",
+              "attacher": "user123",
+              "created": "2022-03-31T12:34:56.789+0000",
+              "uri": "http://example.com/images/screenshot.jpg",
+              "description": "Screenshot of the issue"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Project B",
+      "key": "PROJB",
+      "description": "Another Sample Project",
+      "versions": [
+        {
+          "name": "1.0",
+          "released": true,
+          "releaseDate": "2022-02-01T10:00:00.000+0000"
+        }
+      ],
+      "components": ["Component A", "Component C"],
+      "issues": [
+        {
+          "status": "Open",
+          "reporter": "user123",
+          "issueType": "Story",
+          "created": "P-2D",
+          "updated": "P-1D",
+          "summary": "Implement new feature",
+          "externalId": "1"
+        },
+        {
+          "status": "Closed",
+          "reporter": "user456",
+          "issueType": "Task",
+          "created": "P-4D",
+          "updated": "P-3D",
+          "resolution": "Fixed",
+          "summary": "Fix spelling error",
+          "externalId": "2"
+        }
+      ]
+    }
+  ]
 }
